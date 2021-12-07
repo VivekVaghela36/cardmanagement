@@ -20,10 +20,11 @@ class CardController extends Controller
 
     public function create($id=null)
     {
+        $type='add';
         if ($id != null) {
             $type='edit';
         }
-        $type='add';
+       
         $card=Card::find($id);
         return view('card.edit-add',compact('card','type'));
     }
